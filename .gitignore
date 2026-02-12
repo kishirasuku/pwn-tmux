@@ -1,0 +1,14 @@
+# gdb
+.gdb_history
+
+# challenge binaries
+*.elf
+*.bin
+
+# pycache
+__pycache__/
+*.pyc
+
+# core dumps
+core
+core.*
