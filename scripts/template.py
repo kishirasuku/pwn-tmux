@@ -25,9 +25,9 @@ def conn():
     if args.REMOTE:
         return remote(HOST, PORT)
     elif args.GDB:
-        return gdb.debug(BINARY, gdbscript=GDB_SCRIPT)
+        return gdb.debug(['stdbuf', '-o0', BINARY], gdbscript=GDB_SCRIPT)
     else:
-        return process(BINARY)
+        return process(['stdbuf', '-o0', BINARY])
 
 GDB_SCRIPT = '''
 # ブレークポイントをここに追加
